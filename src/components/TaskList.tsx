@@ -28,7 +28,7 @@ export function TaskList() {
 
   function handleToggleTaskCompletion(id: number) {
     const taskIndex = tasks.findIndex(task => task.id === id);
-    const newTask = { ...tasks[taskIndex], isComplete: true};
+    const newTask = { ...tasks[taskIndex], isComplete: !tasks[taskIndex].isComplete };
     const newTasks = [...tasks];
     newTasks.splice(taskIndex, 1, newTask);
     setTasks(newTasks);
